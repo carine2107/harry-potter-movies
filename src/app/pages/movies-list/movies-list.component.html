@@ -1,1 +1,17 @@
-<p>movies-list works!</p>
+<div class="container">
+    <form [formGroup]="filterForm" class="header" >
+      <div>
+        <h4>Filters</h4>
+      </div>
+      <label>Title:</label>
+      <input id="titleInput" type="text" placeholder="Filter by Title" formControlName="title">
+      <label>Release year:</label>
+      <input id="yearInput" type="number" placeholder="Filter by Release year" formControlName="year">
+    </form>
+   <ul>
+        <li *ngFor="let movie of filteredMovies$ | async">
+            <app-movie-item [movie]="movie"></app-movie-item>  
+
+        </li>
+   </ul>   
+</div>

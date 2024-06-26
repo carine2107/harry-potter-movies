@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="header">
+      <button id="back" [routerLink]="['/']" class="back-button">&larr; Back</button>
+    </div>
+    <!--Detail here-->
+    <div *ngIf="movieDetail$ | async as movie" class="movie-details">
+      <h1>Fantastic Beasts and Where to Find Them</h1>
+      <div class="movie-summary">
+        <img [src]="movie.poster" [alt]="movie.title">
+        <p><strong>Summary:</strong> {{ movie.summary }}</p>
+      </div>
+      <div class="details">
+        <h2>Details</h2>
+        <table>
+          <tr>
+            <td>Box office</td>
+            <td>{{ movie.boxOffice | budget}}</td>
+          </tr>
+          <tr>
+            <td>Budget</td>
+            <td>{{ movie.budget | budget }}</td>
+          </tr>
+          <tr>
+            <td>Duration</td>
+            <td>{{ movie.duration | duration }}</td>
+          </tr>
+          <tr>
+            <td>Producers</td>
+            <td>{{ movie.producers | arrayFormatter }}</td>
+          </tr>
+          <tr>
+            <td>Cinematographers</td>
+            <td>{{ movie.cinematographers | arrayFormatter }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>

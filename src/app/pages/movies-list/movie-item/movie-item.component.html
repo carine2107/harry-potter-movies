@@ -1,0 +1,7 @@
+<div class="movie-item">
+    <div class="movie-header">
+        <h3>{{movie.title}}</h3>
+        <button id="{{movie.id}}" class="details-button" (click)="redirectToMovieDetailsById(movie.id)">Details</button>
+    </div>
+    <p>Release date: {{movie.release_date}} | Budget: {{movie.budget | budget}} | Duration: {{movie.duration | duration}}</p>
+</div>
