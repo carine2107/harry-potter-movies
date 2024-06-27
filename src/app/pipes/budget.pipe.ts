@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class BudgetPipe implements PipeTransform {
 
-  transform(value:  number): string {
+  transform(value:  string): string {
     return `$${value} million`;
   }
 
